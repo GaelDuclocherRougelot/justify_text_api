@@ -11,12 +11,16 @@ export default {
     let justifiedText = "";
 
     for (const word of words) {
-      if (word.length + line.length + 1 < maxLineLength) {
-        line += (line ? " " : "") + word.replace(/\n/g, "");
+      const tempWord = word.replace(/\n\n/g, '<DOUBLE_NEWLINE>');
+      const cleanedWord = tempWord.replace(/\n/g, '');
+      const finalWord = cleanedWord.replace(/<DOUBLE_NEWLINE>/g, '\n');
+
+      if (finalWord.length + line.length + 1 < maxLineLength) {
+        line += (line ? " " : "") + finalWord;
         continue;
       } else {
         justifiedText += justifyLine(line, maxLineLength) + "\n";
-        line = word;
+        line = finalWord;
       }
     }
 

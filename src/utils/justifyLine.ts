@@ -3,8 +3,6 @@ export default function justifyLine(line: string, maxLineLength: number) {
   const extraSpaces = maxLineLength - line.length;
   
   if (lineWords.length === 1) return line;
-
-  console.log(lineWords);
   
 
   let i = 0;
