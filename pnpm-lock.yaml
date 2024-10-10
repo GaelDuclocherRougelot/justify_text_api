@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@types/body-parser':
+    specifier: ^1.19.5
+    version: 1.19.5
   body-parser:
     specifier: ^1.20.3
     version: 1.20.3
@@ -720,13 +723,11 @@ packages:
     dependencies:
       '@types/connect': 3.4.38
       '@types/node': 22.7.5
-    dev: true
 
   /@types/connect@3.4.38:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
       '@types/node': 22.7.5
-    dev: true
 
   /@types/express-serve-static-core@5.0.0:
     resolution: {integrity: sha512-AbXMTZGt40T+KON9/Fdxx0B2WK5hsgxcfXJLr5bFpZ7b4JCex2WyQPTEKdXqfHiY5nKKBScZ7yCoO6Pvgxfvnw==}

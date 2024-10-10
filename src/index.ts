@@ -1,14 +1,15 @@
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
-
+import router from "@/router/api";
+import bodyParser from "body-parser";
 dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (request: Request, response: Response) => {
-  response.status(200).send("Hello World");
-});
+app.use(bodyParser.urlencoded());
+
+app.use(router);
 
 app
   .listen(PORT, () => {
