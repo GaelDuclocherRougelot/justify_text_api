@@ -4,28 +4,38 @@ import { Request, Response } from "express";
 export default {
   async justifyText(req: Request, res: Response) {
     const text = req.body;
-    const words = text.split(" ");
     const maxLineLength = 80;
+    const paragraphs = text.split(/\n\n/);
 
-    let line = "";
     let justifiedText = "";
 
-    for (const word of words) {
-      const tempWord = word.replace(/\n\n/g, '<DOUBLE_NEWLINE>');
-      const cleanedWord = tempWord.replace(/\n/g, '');
-      const finalWord = cleanedWord.replace(/<DOUBLE_NEWLINE>/g, '\n');
+    paragraphs.forEach((paragraph: string) => {
+      const words = paragraph.split(/\s+/);
+      let line = "";
 
-      if (finalWord.length + line.length + 1 < maxLineLength) {
-        line += (line ? " " : "") + finalWord;
-        continue;
-      } else {
-        justifiedText += justifyLine(line, maxLineLength) + "\n";
-        line = finalWord;
+      words.forEach((word) => {
+        const tempWord = word.replace(/\n\n/g, "<DOUBLE_NEWLINE>");
+        const cleanedWord = tempWord.replace(/\n/g, "");
+        const finalWord = cleanedWord.replace(/<DOUBLE_NEWLINE>/g, "\n");
+
+        if (line.length + finalWord.length + 1 > maxLineLength) {
+          if (line.trim()) {
+            justifiedText += justifyLine(line.trim(), maxLineLength) + "\n";
+          }
+          line = finalWord;
+        } else {
+          line += (line ? " " : "") + finalWord;
+        }
+      });
+
+      if (line) {
+        justifiedText += justifyLine(line.trim(), maxLineLength) + "\n";
       }
-    }
 
-    justifiedText += justifyLine(line, maxLineLength) + "\n";
+      justifiedText += "\n";
+    });
 
-    res.status(200).send(justifiedText);
+    justifiedText = justifiedText.replace(/\n{2,}/g, '\n');
+    res.status(200).send(justifiedText.trim());
   },
 };
