@@ -1,41 +1,20 @@
-import justifyLine from "@/utils/justifyLine";
+import { removeExtraNewlines, justifyParagraph } from "@/utils/justifyUtils";
 import { Request, Response } from "express";
 
 export default {
   async justifyText(req: Request, res: Response) {
     const text = req.body;
     const maxLineLength = 80;
+
+    // Split the input text into paragraphs by double newlines
     const paragraphs = text.split(/\n\n/);
+    let justifiedText = paragraphs.map((paragraph: string) => {
+      return justifyParagraph(paragraph, maxLineLength);
+    }).join("\n");
 
-    let justifiedText = "";
+    // Clean up any redundant newlines or blank spaces
+    justifiedText = removeExtraNewlines(justifiedText);
 
-    paragraphs.forEach((paragraph: string) => {
-      const words = paragraph.split(/\s+/);
-      let line = "";
-
-      words.forEach((word) => {
-        const tempWord = word.replace(/\n\n/g, "<DOUBLE_NEWLINE>");
-        const cleanedWord = tempWord.replace(/\n/g, "");
-        const finalWord = cleanedWord.replace(/<DOUBLE_NEWLINE>/g, "\n");
-
-        if (line.length + finalWord.length + 1 > maxLineLength) {
-          if (line.trim()) {
-            justifiedText += justifyLine(line.trim(), maxLineLength) + "\n";
-          }
-          line = finalWord;
-        } else {
-          line += (line ? " " : "") + finalWord;
-        }
-      });
-
-      if (line) {
-        justifiedText += justifyLine(line.trim(), maxLineLength) + "\n";
-      }
-
-      justifiedText += "\n";
-    });
-
-    justifiedText = justifiedText.replace(/\n{2,}/g, '\n');
     res.status(200).send(justifiedText.trim());
   },
 };
