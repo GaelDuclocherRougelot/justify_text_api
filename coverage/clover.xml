@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1728662852456" clover="3.2.0">
+  <project timestamp="1728662852456" name="All files">
+    <metrics statements="105" coveredstatements="94" conditionals="15" coveredconditionals="9" methods="13" coveredmethods="12" elements="133" coveredelements="115" complexity="0" loc="105" ncloc="105" packages="5" files="8" classes="8"/>
+    <package name="src">
+      <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/index.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.controllers">
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/controllers/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="justifyController.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/controllers/justifyController.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middlewares">
+      <metrics statements="37" coveredstatements="26" conditionals="7" coveredconditionals="3" methods="4" coveredmethods="3"/>
+      <file name="auth.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/middlewares/auth.ts">
+        <metrics statements="21" coveredstatements="14" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+      </file>
+      <file name="rateLimiter.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/middlewares/rateLimiter.ts">
+        <metrics statements="16" coveredstatements="12" conditionals="3" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.router.api">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/router/api/index.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="36" coveredstatements="36" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6"/>
+      <file name="generateToken.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/utils/generateToken.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+      <file name="justifyUtils.ts" path="/Users/gaeldr/Documents/DEVELOPMENT/TESTS TECHNIQUES/justify_text_api/src/utils/justifyUtils.ts">
+        <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="318" type="stmt"/>
+        <line num="3" count="318" type="stmt"/>
+        <line num="4" count="318" type="stmt"/>
+        <line num="5" count="318" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="318" type="stmt"/>
+        <line num="21" count="318" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="23" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="23" type="stmt"/>
+        <line num="25" count="23" type="stmt"/>
+        <line num="27" count="295" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="23" type="stmt"/>
+        <line num="40" count="23" type="stmt"/>
+        <line num="42" count="23" type="cond" truecount="0" falsecount="1"/>
+        <line num="44" count="23" type="stmt"/>
+        <line num="46" count="23" type="stmt"/>
+        <line num="47" count="87" type="stmt"/>
+        <line num="48" count="87" type="stmt"/>
+        <line num="51" count="23" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
