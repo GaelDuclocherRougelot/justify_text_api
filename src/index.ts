@@ -1,3 +1,4 @@
+require('module-alias/register');
 import router from "@/router/api";
 import dotenv from "dotenv";
 import express from "express";
