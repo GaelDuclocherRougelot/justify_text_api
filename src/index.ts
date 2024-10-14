@@ -1,19 +1,17 @@
+import router from "@/router/api";
 import dotenv from "dotenv";
-import express, { Request, Response } from "express";
-
+import express from "express";
 dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (request: Request, response: Response) => {
-  response.status(200).send("Hello World");
+app.use(express.urlencoded({ extended: true }));
+
+app.use(router);
+
+const server = app.listen(PORT, () => {
+  console.log("Server running at PORT: ", PORT);
 });
 
-app
-  .listen(PORT, () => {
-    console.log("Server running at PORT: ", PORT);
-  })
-  .on("error", (error) => {
-    throw new Error(error.message);
-  });
+export { app, server };
