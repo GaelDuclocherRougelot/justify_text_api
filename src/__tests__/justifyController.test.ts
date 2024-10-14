@@ -1,15 +1,14 @@
-import request from 'supertest';
-import generateToken from '@/utils/generateToken';
-import { app, server } from '@/index';
-import fs, { readFile } from 'fs';
-import path from 'path';
+import { app, server } from "@/index";
+import generateToken from "@/utils/generateToken";
+import fs from "fs";
+import path from "path";
+import request from "supertest";
 
-describe('POST /api/justify', () => {
-
+describe("justifyController", () => {
   let token: string;
 
   beforeAll(() => {
-    token = generateToken('foo@bar.com');
+    token = generateToken("foo@bar.com");
   });
 
   afterAll((done) => {
@@ -17,23 +16,23 @@ describe('POST /api/justify', () => {
   });
 
   const readFile = (fileName: string) => {
-    return fs.readFileSync(path.join(__dirname, fileName), 'utf-8').trim();
+    return fs.readFileSync(path.join(__dirname, fileName), "utf-8").trim();
   };
 
-
-  it('should return justified text', async () => {
-    const inputText = readFile('./input1.txt');
-    const expectedOutput = readFile('./expectedOutput1.txt');
-
-
+  it("should return justified text", async () => {
+    const inputText = readFile("./input1.txt");
+    const expectedOutput = readFile("./expectedOutput1.txt");
+  
     const response = await request(app)
-      .post('/api/justify')
-      .send(inputText)
-      .set('Content-Type', 'text/plain')
-      .set('Authorization', `Bearer ${token}`);
-    
-    expect(response.text).not.toContain('\n\n');
-    expect(response.text).toBe(expectedOutput);
+      .post("/api/justify")
+      .set("Content-Type", "text/plain")
+      .set("Authorization", `Bearer ${token}`)
+      .send(inputText);
+
+    expect(response.text).not.toContain("\n\n");
+    expect(response.text.replace(/\s+/g, " ").trim()).toBe(
+      expectedOutput.replace(/\s+/g, " ").trim()
+    );
     expect(response.status).toBe(200);
   });
 

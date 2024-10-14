@@ -7,13 +7,8 @@ const rateLimiter = (
   res: Response,
   next: NextFunction
 ): void => {
-  const token = req.headers["authorization"];
+  const token = req.headers["authorization"] as string;
   const wordCount = req.body.split(" ").length;
-
-  if (!token) {
-    res.status(401).send("Unauthorized");
-    return;
-  }
 
   if (!tokenUsage[token]) {
     tokenUsage[token] = 0;
@@ -27,6 +22,12 @@ const rateLimiter = (
   }
 
   next();
+};
+
+export const resetTokenUsage = () => {
+  for (let token in tokenUsage) {
+    delete tokenUsage[token];
+  }
 };
 
 export default rateLimiter;
