@@ -23,3 +23,9 @@ pnpm run start
 ``` bash
 pnpm run test
 ```
+
+## How to build the project
+
+``` bash
+pnpm run build
+```
