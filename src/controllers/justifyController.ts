@@ -6,7 +6,6 @@ export default {
     const text = req.body;
     const maxLineLength = 80;
 
-    // Split the input text into paragraphs by double newlines
     const paragraphs = text.split(/\n\n/);
     let justifiedText = paragraphs.map((paragraph: string) => {
       return justifyParagraph(paragraph, maxLineLength);

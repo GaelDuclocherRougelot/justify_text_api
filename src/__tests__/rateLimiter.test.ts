@@ -31,33 +31,33 @@ describe("Rate Limiter Middleware", () => {
   });
 
   it("should block requests exceeding the limit", async () => {
-    // First request under limit (20,000 words)
+    // First request under limit 20,000 words
     await request(app)
       .post("/api/justify")
       .set("Content-Type", "text/plain")
       .set("Authorization", validToken)
       .send(largeText);
 
-    // Second request under limit (another 20,000 words)
+    // Second request under limit 20,000 words
     await request(app)
       .post("/api/justify")
       .set("Content-Type", "text/plain")
       .set("Authorization", validToken)
       .send(largeText);
 
-    // Third request under limit (another 20,000 words)
+    // Third request under limit 20,000 words
     await request(app)
       .post("/api/justify")
       .set("Content-Type", "text/plain")
       .set("Authorization", validToken)
       .send(largeText);
 
-    // Fourth request exceeds the limit (total of 80,000 words so far)
+    // Fourth total of 80,000 words
     const res = await request(app)
       .post("/api/justify")
       .set("Content-Type", "text/plain")
       .set("Authorization", validToken)
-      .send(largeText); // This request would push the word count to 100,000
+      .send(largeText); //Push the word count to 100,000
 
     expect(res.status).toBe(402);
     expect(res.body.message).toBe("Payment Required");
@@ -66,7 +66,7 @@ describe("Rate Limiter Middleware", () => {
   it("should correctly reset token usage for new tokens", async () => {
     const newToken = `Bearer ${generateToken("foo@bar.com")}`;
     resetTokenUsage();
-    // First request for a new token (20,000 words)
+    // First request for a new token 20,000 words
     const res = await request(app)
       .post("/api/justify")
       .set("Content-Type", "text/plain")

@@ -8,7 +8,6 @@ import request from "supertest";
 jest.mock("jsonwebtoken");
 dotenv.config();
 
-const SECRET_JWT_KEY = process.env.SECRET_JWT_KEY as string;
 
 describe("auth middleware", () => {
   let mockRequest: Partial<Request>;
