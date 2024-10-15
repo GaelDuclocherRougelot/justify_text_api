@@ -29,3 +29,13 @@ pnpm run test
 ``` bash
 pnpm run build
 ```
+
+## API Documentation
+
+Base endpoint : https://justifytextapi-production.up.railway.app/api
+
+POST:
+- Generate a token : ```/token```
+  - Body : email
+- Justify a text (with token provided) : ```/justify```
+  - Body: plain text
